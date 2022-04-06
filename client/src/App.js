@@ -1,11 +1,12 @@
 import './App.css';
-import Students from './components/students';
+import { Outlet } from 'react-router-dom';
+import Navigation from './Components/Navigation';
 
 function App() {
   return (
     <div className="App">
-      Hello from Techtonica
-      <Students />
+      <Navigation/>
+      <Outlet/>
     </div>
   );
 }
