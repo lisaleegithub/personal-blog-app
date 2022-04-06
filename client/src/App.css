@@ -1,7 +1,26 @@
+body {
+  background-image: url("https://www.mrussellphotography.com/photoblog/photography/2013/august/rainier/tatoosh-range-wildflowers-mazama-ridge-28622.jpg");
+  background-size: cover;
+}
+
 h2 {
   font-size: 3rem;
 }
 
-.nav {
+.nav ul {
   font-size: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.nav li a {
+  float: left;
+  display: block;
+  color: purple;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
