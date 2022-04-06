@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Form from "./Form";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -11,14 +12,19 @@ function Posts() {
             })
     }, []);
 
+    // to show list of sightings after adding
+    const addPost = (newPost) => {
+        setPosts((posts) => [...posts, newPost]);
+
+    }
     return (
         <div className="posts">
+            <Form addPost={addPost}/>
             <h2> List of Blog Posts </h2>
             <ul>
                 {posts.map(post =>
                     <li key={post.id}>
                         Title: {post.title} <br />
-                        Date: {post.date}<br />
                         Content: {post.content}<br />
                         <br />
                     </li>)}

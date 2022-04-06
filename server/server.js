@@ -24,17 +24,21 @@ app.get('/api/posts', cors(), async (req, res) => {
     }
 });
 
-// // POST request
-// app.post('/api/students', cors(), async (req, res) => {
-//     const newUser = { firstname: req.body.firstname, lastname: req.body.lastname }
-//     console.log([newUser.firstname, newUser.lastname]);
-//     const result = await db.query(
-//         'INSERT INTO students(firstname, lastname) VALUES($1, $2) RETURNING *',
-//         [newUser.firstname, newUser.lastname]
-//     );
-//     console.log(result.rows[0]);
-//     res.json(result.rows[0]);
-// });
+// POST request for the posts table
+app.post('/api/posts', cors(), async (req, res) => {
+    const newPost = { 
+        title: req.body.title, 
+        content: req.body.content 
+    }
+    console.log([newPost.title, newPost.content]);
+    const creationTime = new Date().toISOString();
+    const result = await db.query(
+        'INSERT INTO posts(title, content, timestamp) VALUES($1, $2, $3) RETURNING *',
+        [newPost.title, newPost.content, creationTime]
+    );
+    console.log(result.rows[0]);
+    res.json(result.rows[0]);
+});
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
