@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 // GET request for the posts table
 app.get('/api/posts', cors(), async (req, res) => {
     try{
-        const { rows: posts } = await db.query('SELECT * FROM posts');
+        const { rows: posts } = await db.query('SELECT * FROM posts ORDER BY id DESC');
         res.send(posts);
     } catch (e){
         return res.status(400).json({e});
@@ -40,7 +40,36 @@ app.post('/api/posts', cors(), async (req, res) => {
     res.json(result.rows[0]);
 });
 
+// DELETE endpoint
+app.delete('/api/posts/:postId', cors(), async (req, res) =>{
+    const postId = req.params.postId;
+    //console.log(req.params);
+    await db.query('DELETE FROM posts WHERE id=$1', [postId]);
+    res.status(200).end();
+});
+
+
 // console.log that your server is up and running
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
+});
+
+// PUT request - Update request
+app.put('/api/posts/:postId', cors(), async (req, res) =>{
+    const postId = req.params.postId;
+    const updatePost = { id: req.body.id, title: req.body.title, content: req.body.content }
+    //console.log(req.params);
+    console.log("this is postId", postId);
+    console.log("this is updatePost", updatePost);
+    const query = `UPDATE posts SET title=$1, content=$2 WHERE id = ${postId} RETURNING *`;
+    console.log("this is query", query);
+    const values = [updatePost.title, updatePost.content];
+    try{
+        const updated = await db.query(query, values);
+        console.log(updated.rows[0]);
+        res.send(updated.rows[0]);
+    } catch (e){
+        console.log(e);
+        return res.status(400).json({e});
+    }
 });
