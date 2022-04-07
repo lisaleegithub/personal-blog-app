@@ -13,9 +13,9 @@ import Contact from "./Routes/Contact";
 ReactDOM.render(
   <Router>
     <Routes>
-      <Route path="/" element={<App />}>
-      <Route path="blog" element={<Blog />} />
+        <Route path="/" element={<App />}>
         <Route path="home" element={<Home />} />
+        <Route path="blog" element={<Blog />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Route>
