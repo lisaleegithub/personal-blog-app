@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // form for a new blog post
-const Form = (props) => {
+const AddForm = (props) => {
     const [post, setPost] = useState({
         title: "",
         content: ""
@@ -66,4 +66,4 @@ const Form = (props) => {
     );
 };
 
-export default Form;
+export default AddForm;
