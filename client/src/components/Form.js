@@ -5,7 +5,9 @@ const Form = (props) => {
     const { initialPost = {
         id: null,
         title: "",
-        content: ""
+        content: "",
+        image: "",
+        alt: ""
     } } = props;
 
     // We're using that initial post as our initial state                       
@@ -20,6 +22,16 @@ const Form = (props) => {
     const handleContentChange = (event) => {
         const content = event.target.value;
         setPost((post) => ({ ...post, content }));
+    }
+
+    const handleImageChange = (event) => {
+        const image = event.target.value;
+        setPost((post) => ({ ...post, image }));
+    }
+
+    const handleAltChange = (event) => {
+        const alt = event.target.value;
+        setPost((post) => ({ ...post, alt }));
     }
 
     // a function to handle the post request
@@ -80,6 +92,22 @@ const Form = (props) => {
                 required
                 value={post.content}
                 onChange={handleContentChange}
+            />
+            <label>Image URL</label>
+            <input
+                type="text"
+                id="add-image"
+                placeholder="Image URL"
+                value={post.image}
+                onChange={handleImageChange}
+            />
+            <label>Image Description</label>
+            <input
+                type="text"
+                id="add-alt"
+                placeholder="Image Description"
+                value={post.alt}
+                onChange={handleAltChange}
             />
             <button type="submit">{!post.id ? "Add" : "Save"}</button>
         </form>

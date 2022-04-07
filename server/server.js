@@ -28,13 +28,15 @@ app.get('/api/posts', cors(), async (req, res) => {
 app.post('/api/posts', cors(), async (req, res) => {
     const newPost = { 
         title: req.body.title, 
-        content: req.body.content 
+        content: req.body.content, 
+        image: req.body.image,
+        alt: req.body.alt
     }
     console.log([newPost.title, newPost.content]);
     const creationTime = new Date().toISOString();
     const result = await db.query(
-        'INSERT INTO posts(title, content, timestamp) VALUES($1, $2, $3) RETURNING *',
-        [newPost.title, newPost.content, creationTime]
+        'INSERT INTO posts(title, content, image, alt, timestamp) VALUES($1, $2, $3, $4, $5) RETURNING *',
+        [newPost.title, newPost.content, newPost.image, newPost.alt, creationTime]
     );
     console.log(result.rows[0]);
     res.json(result.rows[0]);
@@ -57,13 +59,18 @@ app.listen(PORT, () => {
 // PUT request - Update request
 app.put('/api/posts/:postId', cors(), async (req, res) =>{
     const postId = req.params.postId;
-    const updatePost = { id: req.body.id, title: req.body.title, content: req.body.content }
+    const updatePost = { 
+        title: req.body.title, 
+        content: req.body.content, 
+        image: req.body.image,
+        alt: req.body.alt
+    }
     //console.log(req.params);
     console.log("this is postId", postId);
     console.log("this is updatePost", updatePost);
-    const query = `UPDATE posts SET title=$1, content=$2 WHERE id = ${postId} RETURNING *`;
+    const query = `UPDATE posts SET title=$1, content=$2, image=$3, alt=$4 WHERE id = ${postId} RETURNING *`;
     console.log("this is query", query);
-    const values = [updatePost.title, updatePost.content];
+    const values = [updatePost.title, updatePost.content, updatePost.image, updatePost.alt];
     try{
         const updated = await db.query(query, values);
         console.log(updated.rows[0]);
