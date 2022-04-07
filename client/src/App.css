@@ -1,3 +1,6 @@
+* {
+  font-family: 'Comic Neue', cursive;
+}
 h2 {
   font-size: 3rem;
 }
@@ -19,3 +22,11 @@ h2 {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+/* body { 
+  background: url(img1.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover; 
+} */
