@@ -66,33 +66,36 @@ function Posts() {
 
     return (
         <div className="posts">
-            <h2>Create a New Post</h2>
-            <Form savePost={addPost} />
-            
-            <h2> List of Blog Posts </h2>
 
-            <ul>
-                {posts.map((post) => {
-                    if (post.id === editingPostId) {
-                        return <Form initialPost={post} savePost={updatePost} />
-                    } else {
-                        return (
-                            <li key={post.id}>
-                                Post ID: {post.id}
-                                <button type="button" onClick={() => { onDelete(post) }}>Delete</button>
-                                <button type="button" onClick={() => { onEdit(post) }}>Edit</button>
-                                <br />
-                                Title: {post.title} <br />
-                                {<img src={post.image} alt={post.alt} width="600px"></img>}<br />
-                                Content: {post.content} <br />
+            <div className="addPost">
+                <h2>Create a New Post</h2>
+                <Form savePost={addPost} />
+            </div>
 
-                                <br />
-                            </li>
-                        );
+            <div className="postList">
+                <h2> List of Blog Posts </h2>
+                <ul>
+                    {posts.map((post) => {
+                        if (post.id === editingPostId) {
+                            return <Form initialPost={post} savePost={updatePost} />
+                        } else {
+                            return (
+                                <li key={post.id}>
+                                    Post ID: {post.id}
+                                    <button type="button" onClick={() => { onDelete(post) }}>Delete</button>
+                                    <button type="button" onClick={() => { onEdit(post) }}>Edit</button>
+                                    <br />
+                                    Title: {post.title} <br />
+                                    {<img src={post.image} alt={post.alt} width="600px"></img>}<br />
+                                    Content: {post.content} <br />
+                                    <br />
+                                </li>
+                            );
+                        }
                     }
-                }
-                )}
-            </ul>
+                    )}
+                </ul>
+            </div>
 
         </div>
     );
