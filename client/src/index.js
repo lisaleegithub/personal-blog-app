@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import reportWebVitals from './reportWebVitals';
-import Home from "./Routes/Home";
-import Blog from "./Routes/Blog";
+import Welcome from "./Routes/Welcome";
 import About from './Routes/About';
+import Create from "./Routes/Create";
 import Contact from "./Routes/Contact";
 
 
@@ -14,9 +14,10 @@ ReactDOM.render(
   <Router>
     <Routes>
         <Route path="/" element={<App />}>
-        <Route path="home" element={<Home />} />
-        <Route path="blog" element={<Blog />} />
+        <Route path="/" element={<Welcome />} />
         <Route path="about" element={<About />} />
+        <Route path="create" element={<Create />} />
+        <Route path="create" element={<Welcome />} />
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>

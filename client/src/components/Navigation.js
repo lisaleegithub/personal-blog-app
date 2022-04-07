@@ -10,11 +10,11 @@ export default function Navigation() {
                 </li>
 
                 <li>
-                    <Link to="/blog">Blog</Link>{" "}
+                    <Link to="/about">About</Link>{" "}
                 </li>
 
                 <li>
-                    <Link to="/about">About</Link>{" "}
+                    <Link to="/create">Create Post</Link>{" "}
                 </li>
 
                 <li>
