@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import AddForm from "./AddForm";
-import EditForm from "./EditForm";
+import Form from "./Form";
 
 function Posts() {
     // Original state in the parent component so the page will now when to render new posts
     const [posts, setPosts] = useState([]);
 
-    // display the form if it's true
-    const [isEditing, setIsEditing] = useState(null);
+    // New state to check if we are working on editing a post 
+    const [editingPostId, setEditingPostId] = useState(null);
 
-    // // New state to check if we are working on editing a post 
-    // const [editingStudentId, setEditingStudentId] = useState(null);
+    // // display the form if it's true
+    // const [isEditing, setIsEditing] = useState(null);
 
     const loadPosts = () => {
         fetch("http://localhost:5005/api/posts")
@@ -30,11 +29,6 @@ function Posts() {
         setPosts((posts) => [...posts, newPost]);
     }
 
-    // to show list of sightings after updating
-    const editPost = (currentPost) => {
-        setPosts((posts) => [...posts, currentPost]);
-    }
-
     // a function to handle the Delete funtionallity
     const onDelete = (post) => {
         return fetch(`http://localhost:5005/api/posts/${post.id}`, {
@@ -47,31 +41,53 @@ function Posts() {
         })
     }
 
+    // A function to update the list of posts when the user edit a post 
+    const updatePost = (savedPost) => {
+        setPosts((posts) => {
+            const newPost = [];
+            for (let post of posts) {
+                if (post.id === savedPost.id) {
+                    newPost.push(savedPost);
+                } else {
+                    newPost.push(post);
+                }
+            }
+            return newPost;
+        })
+        // This line is just to close the form! 
+        setEditingPostId(null);
+    }
+
     // a function to grab the post.id of the post that we want to edit
     const onEdit = (post) => {
-        // const editingId = student.id;
-        setIsEditing(post);
+        const editingId = post.id;
+        setEditingPostId(editingId);
     }
-   
+
     return (
         <div className="posts">
-            {isEditing ? <EditForm post={isEditing} setIsEditing={setIsEditing}/> : (
-                <div className="list">
-                <AddForm addPost={addPost} />
             <h2> List of Blog Posts </h2>
+            <Form savePost={addPost} />
             <ul>
-                {posts.map(post =>
-                    <li key={post.id}>
-                        Post Id: {post.id} <br />
-                        Title: {post.title} <br />
-                        Content: {post.content}<br />
-                        <button type="button" onClick={() => { onDelete(post) }}>Delete</button>
-                        <button type="button" onClick={() => { onEdit(post) }}>Edit</button>
-                        <br />
-                    </li>)}
+                {posts.map((post) => {
+                    if (post.id === editingPostId) {
+                        return <Form initialPost={post} savePost={updatePost} />
+                    } else {
+                        return (
+                            <li key={post.id}>
+                                Post ID: {post.id} <br />
+                                Title: {post.title} <br />
+                                Content: {post.content} <br />
+                                <button type="button" onClick={() => { onDelete(post) }}>Delete</button> <br />
+                                <button type="button" onClick={() => { onEdit(post) }}>Edit</button><br />
+                                <br />
+                            </li>
+                        );
+                    }
+                }
+                )}
             </ul>
-            </div>
-            )}
+
         </div>
     );
 }
