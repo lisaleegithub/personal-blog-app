@@ -1,11 +1,9 @@
 import React from "react";
-import Posts from "../Components/Posts";
 
-export default function Home() {
+export default function Contact() {
   return (
     <header>
-      <h2>This is the Home page</h2>
-      <Posts />
+      <h2>This is the Contact page</h2>
     </header>
   );
 }

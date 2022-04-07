@@ -29,19 +29,17 @@ const Form = (props) => {
       }).then((data) => {
         console.log("From the post ", data);
         props.addPost(data);
-      
     });
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("current post is" + JSON.stringify(post));
-        setPost(post)
+        setPost(post);
         postPost(post);
     };
 
     return (
-        
         <form onSubmit={handleSubmit}>
             <h3>Add a New Post</h3>
                 <label>Title</label>
