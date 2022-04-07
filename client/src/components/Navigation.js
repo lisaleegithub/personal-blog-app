@@ -3,23 +3,15 @@ import { Link } from "react-router-dom";
 
 export default function Navigation() {
     return (
-        <nav className="nav">
+        <nav className="navbar sticky-top navbar-light bg-light" style={{backgroundColor: ""}}>
             <ul>
-                <li>
-                    <Link to="/">Home</Link>{" "}
-                </li>
+                <Link to="/">Home</Link>{" "}
 
-                <li>
-                    <Link to="/about">About</Link>{" "}
-                </li>
+                <Link to="/about">About</Link>{" "}
 
-                <li>
-                    <Link to="/create">Create Post</Link>{" "}
-                </li>
+                <Link to="/create">Create Post</Link>{" "}
 
-                <li>
-                    <Link to="/contact">Contact</Link>{" "}
-                </li>
+                <Link to="/contact">Contact</Link>{" "}
             </ul>
         </nav>
     );
