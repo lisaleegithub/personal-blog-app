@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const PERMISSIONS = ["Yes", "No"];
 
-function ContactForm () {
+function ContactForm() {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -21,46 +21,59 @@ function ContactForm () {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <h3>Contact Us :)</h3>
+    <div class="container-fluid">
+      <form onSubmit={onSubmit}>
 
-      <label>Name*:</label>
-      <input
-        type="text"
-        required
-        placeholder="Name"
-        value={values.name}
-        onChange={set("name")}
-      />
+        <h3>Contact Us :)</h3>
+        <div class="form-group">
+          <label>Name*:</label>
+          <input
+            type="text"
+            required
+            placeholder="Name"
+            value={values.name}
+            onChange={set("name")}
+            className="form-control"
+          />
+        </div>
 
-      <label>Email*:</label>
-      <input
-        type="email"
-        required
-        placeholder="Email"
-        value={values.email}
-        onChange={set("email")}
-      />
+        <div class="form-group">
+          <label>Email*:</label>
+          <input
+            type="email"
+            required
+            placeholder="Email"
+            value={values.email}
+            onChange={set("email")}
+            className="form-control"
+          />
+        </div>
 
-      <label>Message*:</label>
-      <textarea
-        type="text"
-        required
-        placeholder="Your message here"
-        value={values.message}
-        onChange={set("message")}
-      />
+        <div class="form-group">
+          <label>Message*:</label>
+          <textarea
+            type="text"
+            required
+            placeholder="Your message here"
+            value={values.message}
+            onChange={set("message")}
+            className="form-control"
+          />
+        </div>
 
-      <label>About us*:</label>
-      <select required>
-        <option value="">Would you like to be notified of new blog posts?</option>
-        {PERMISSIONS.map((preference) => (
-          <option key={preference}>{preference}</option>
-        ))}
-      </select>
+        <div class="form-group">
+          <label>About us*:</label>
+          <select required>
+            <option value="">Would you like to be notified of new blog posts?</option>
+            {PERMISSIONS.map((preference) => (
+              <option key={preference}>{preference}</option>
+            ))}
+          </select>
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
   );
 }
 
