@@ -29,14 +29,15 @@ app.post('/api/posts', cors(), async (req, res) => {
     const newPost = { 
         title: req.body.title, 
         content: req.body.content, 
+        location: req.body.location,
         image: req.body.image,
         alt: req.body.alt
     }
     console.log([newPost.title, newPost.content]);
     const creationTime = new Date().toISOString();
     const result = await db.query(
-        'INSERT INTO posts(title, content, image, alt, timestamp) VALUES($1, $2, $3, $4, $5) RETURNING *',
-        [newPost.title, newPost.content, newPost.image, newPost.alt, creationTime]
+        'INSERT INTO posts(title, content, location, image, alt, timestamp) VALUES($1, $2, $3, $4, $5, $6) RETURNING *',
+        [newPost.title, newPost.content, newPost.location, newPost.image, newPost.alt, creationTime]
     );
     console.log(result.rows[0]);
     res.json(result.rows[0]);
@@ -62,15 +63,16 @@ app.put('/api/posts/:postId', cors(), async (req, res) =>{
     const updatePost = { 
         title: req.body.title, 
         content: req.body.content, 
+        location: req.body.location,
         image: req.body.image,
         alt: req.body.alt
     }
     //console.log(req.params);
     console.log("this is postId", postId);
     console.log("this is updatePost", updatePost);
-    const query = `UPDATE posts SET title=$1, content=$2, image=$3, alt=$4 WHERE id = ${postId} RETURNING *`;
+    const query = `UPDATE posts SET title=$1, content=$2, location=$3, image=$4, alt=$5 WHERE id = ${postId} RETURNING *`;
     console.log("this is query", query);
-    const values = [updatePost.title, updatePost.content, updatePost.image, updatePost.alt];
+    const values = [updatePost.title, updatePost.content, updatePost.location, updatePost.image, updatePost.alt];
     try{
         const updated = await db.query(query, values);
         console.log(updated.rows[0]);

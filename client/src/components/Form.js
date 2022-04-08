@@ -6,6 +6,7 @@ const Form = (props) => {
         id: null,
         title: "",
         content: "",
+        location: "",
         image: "",
         alt: ""
     } } = props;
@@ -22,6 +23,11 @@ const Form = (props) => {
     const handleContentChange = (event) => {
         const content = event.target.value;
         setPost((post) => ({ ...post, content }));
+    }
+
+    const handleLocationChange = (event) => {
+        const location = event.target.value;
+        setPost((post) => ({ ...post, location }));
     }
 
     const handleImageChange = (event) => {
@@ -77,7 +83,7 @@ const Form = (props) => {
             <form onSubmit={handleSubmit}>
 
                 <div class="form-group">
-                    <label>Title</label>
+                    <label>Title*</label>
                     <input
                         type="text"
                         id="add-title"
@@ -90,7 +96,7 @@ const Form = (props) => {
                 </div>
 
                 <div class="form-group">
-                    <label>Content</label>
+                    <label>Content*</label>
                     <textarea
                         type="text"
                         id="add-content"
@@ -98,6 +104,18 @@ const Form = (props) => {
                         required
                         value={post.content}
                         onChange={handleContentChange}
+                        className="form-control"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input
+                        type="location"
+                        id="add-location"
+                        placeholder="Location"
+                        value={post.location}
+                        onChange={handleLocationChange}
                         className="form-control"
                     />
                 </div>
