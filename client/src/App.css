@@ -31,3 +31,52 @@ body {
   -o-background-size: cover; 
   background-size: cover; 
 }
+
+/* format buttons */
+.submit-button {
+  background-color: lightgrey; 
+  color: black; 
+  border: #4CAF50;
+  margin-top: 10px;
+  border-radius: 7px;
+  width: 80px;
+  height: 30px;
+}
+
+.submit-button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-button, .edit-button {
+  background-color: lightgoldenrodyellow; 
+  color: black; 
+  border: #4CAF50;
+  margin: 0px 5px;
+  border-radius: 7px;
+  width: 60px;
+  height: 30px;
+}
+
+.delete-button:hover {
+  background-color: red;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: green;
+  color: white;
+}
+
+.card {
+  margin: 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.6);
+}
+
+.card-img-top {
+  margin: 20px auto;
+  display: block;
+  width: 500px;
+  border-radius: 10px;
+}

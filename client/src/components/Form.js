@@ -76,8 +76,6 @@ const Form = (props) => {
         <div class="container-fluid">
             <form onSubmit={handleSubmit}>
 
-                <h4>Add a New Post</h4>
-
                 <div class="form-group">
                     <label>Title</label>
                     <input
@@ -128,7 +126,7 @@ const Form = (props) => {
                     />
                 </div>
 
-                <button type="submit">{!post.id ? "Add" : "Save"}</button>
+                <button type="submit" className="submit-button">{!post.id ? "Add" : "Save"}</button>
             </form>
         </div>
     );

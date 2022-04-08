@@ -73,16 +73,16 @@ function Home() {
                         return <Form initialPost={post} savePost={updatePost} />
                     } else {
                         return (
-                            <div className="card" style={{ width: "50rem" }} key={post.id}>
-                                {<img className="card-img-top" src={post.image} alt={post.alt} ></img>}<br />
+                            <div className="card" style={{ width: "45rem" }} key={post.id}>
+                                {<img className="card-img-top" src={post.image} alt={post.alt}></img>}
                                 <div className="card-body">
                                     <p className="card-text">
-                                        Post ID: {post.id}
-                                        <button type="button" onClick={() => { onDelete(post) }}>Delete</button>
-                                        <button type="button" onClick={() => { onEdit(post) }}>Edit</button>
+                                        <strong>Post ID:</strong> {post.id}
+                                        <button type="button" className="delete-button" onClick={() => { onDelete(post) }}>Delete</button>
+                                        <button type="button" className="edit-button" onClick={() => { onEdit(post) }}>Edit</button>
                                         <br />
-                                        Title: {post.title} <br />
-                                        Content: {post.content} <br />
+                                        <strong>Title:</strong> {post.title} <br />
+                                        <strong>Content:</strong> {post.content} <br />
                                         <br />
                                     </p>
                                 </div>
