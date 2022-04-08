@@ -24,7 +24,8 @@ function ContactForm() {
     <div class="container-fluid">
       <form onSubmit={onSubmit}>
 
-        <h3>Contact Us :)</h3>
+        <h4>Contact Us</h4>
+
         <div class="form-group">
           <label>Name*:</label>
           <input
@@ -63,11 +64,12 @@ function ContactForm() {
 
         <div class="form-group">
           <label>About us*:</label>
-          <select required>
+          <select required className="form-control">
             <option value="">Would you like to be notified of new blog posts?</option>
             {PERMISSIONS.map((preference) => (
               <option key={preference}>{preference}</option>
             ))}
+            
           </select>
         </div>
 

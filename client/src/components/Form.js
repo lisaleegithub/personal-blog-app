@@ -73,44 +73,64 @@ const Form = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h3>Add a New Post</h3>
-            <label>Title</label>
-            <input
-                type="text"
-                id="add-title"
-                placeholder="Title"
-                required
-                value={post.title}
-                onChange={handleTitleChange}
-            />
-            <label>Content</label>
-            <textarea
-                type="text"
-                id="add-content"
-                placeholder="Start writing"
-                required
-                value={post.content}
-                onChange={handleContentChange}
-            />
-            <label>Image URL</label>
-            <input
-                type="text"
-                id="add-image"
-                placeholder="Image URL"
-                value={post.image}
-                onChange={handleImageChange}
-            />
-            <label>Image Description</label>
-            <input
-                type="text"
-                id="add-alt"
-                placeholder="Image Description"
-                value={post.alt}
-                onChange={handleAltChange}
-            />
-            <button type="submit">{!post.id ? "Add" : "Save"}</button>
-        </form>
+        <div class="container-fluid">
+            <form onSubmit={handleSubmit}>
+
+                <h4>Add a New Post</h4>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input
+                        type="text"
+                        id="add-title"
+                        placeholder="Title"
+                        required
+                        value={post.title}
+                        onChange={handleTitleChange}
+                        className="form-control"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label>Content</label>
+                    <textarea
+                        type="text"
+                        id="add-content"
+                        placeholder="Start writing"
+                        required
+                        value={post.content}
+                        onChange={handleContentChange}
+                        className="form-control"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input
+                        type="text"
+                        id="add-image"
+                        placeholder="Image URL"
+                        value={post.image}
+                        onChange={handleImageChange}
+                        className="form-control"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label>Image Description</label>
+                    <input
+                        type="text"
+                        id="add-alt"
+                        placeholder="Image Description"
+                        value={post.alt}
+                        onChange={handleAltChange}
+                        className="form-control"
+                    />
+                </div>
+
+                <button type="submit" class="btn btn-success">{!post.id ? "Add" : "Save"}</button>
+            </form>
+        </div>
     );
 };
 
