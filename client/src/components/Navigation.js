@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 export default function Navigation() {
     return (
-        <nav className="navbar sticky-top navbar-light bg-light" style={{backgroundColor: ""}}>
+        <nav className="navbar sticky-top navbar-light" style={{backgroundColor: ""}}>
             <ul>
-                <Link to="/">Home</Link>{" "}
+            <li><Link to="/">Home</Link>{" "}</li>
 
-                <Link to="/about">About</Link>{" "}
+            <li><Link to="/about">About</Link>{" "}</li>
 
-                <Link to="/create">Create Post</Link>{" "}
+            <li><Link to="/create">Create Post</Link>{" "}</li>
 
-                <Link to="/contact">Contact</Link>{" "}
+            <li><Link to="/contact">Contact</Link>{" "}</li>
             </ul>
         </nav>
     );

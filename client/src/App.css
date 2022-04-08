@@ -1,53 +1,39 @@
 * {
   font-family: 'Karla', sans-serif;
 }
-h2 {
-  font-size: 3rem;
-}
 
 h3 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 4px #000000;
-  margin-left: 20px;
+  text-shadow: 2px 2px 4px #796c96;
+  margin: 30px 0px 20px 20px;
+  text-align: center;
+  background-color: white;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(238, 233, 242, 0.3) 0px 3px 3px;
+  font-family: 'Azeret Mono', monospace;
 }
 
 .post-title {
   font-size: 1.5rem;
 }
 
-.navbar ul {
-  font-size: 1.3rem;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.navbar {
-  background-color: rgba(255,255,255,0.5);
-}
-
-.navbar a {
-  display: inline;
-  color: black;
-  text-align: center;
-  padding: 10px;
-  text-decoration: none;
-} 
-
-body { 
-  background: url(https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed; 
-  -webkit-background-size: cover; 
-  -moz-background-size: cover; 
-  -o-background-size: cover; 
-  background-size: cover; 
+body {
+  background: url(https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* format buttons */
 .submit-button {
-  background-color: lightgrey; 
-  color: black; 
+  background-color: lightgrey;
+  color: black;
   border: #4CAF50;
   margin-top: 10px;
   border-radius: 7px;
@@ -60,9 +46,10 @@ body {
   color: white;
 }
 
-.delete-button, .edit-button {
-  background-color: lightgoldenrodyellow; 
-  color: black; 
+.delete-button,
+.edit-button {
+  background-color: lightgoldenrodyellow;
+  color: black;
   border: #4CAF50;
   margin: 0px 5px;
   border-radius: 7px;
@@ -80,11 +67,12 @@ body {
   color: white;
 }
 
-.card, .about-text {
-  margin: 10px;
+.card,
+.about-text {
+  margin: 10px auto;
   padding: 15px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -93,4 +81,36 @@ body {
   display: block;
   width: 500px;
   border-radius: 10px;
+}
+
+.navbar {
+  display: block;
+  box-shadow: 0px 5px 0px #afc8e0;
+  background-color: rgba(78, 117, 156, .9);
+}
+
+.navbar ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.navbar ul li a {
+  display: block;
+  padding: 0px 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 10px 15px 0px 15px;
+  text-shadow: 2px 2px 3px #afc8e0;
+  font-family: 'Azeret Mono', monospace;
+}
+
+.navbar ul li a:hover {
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
 }
