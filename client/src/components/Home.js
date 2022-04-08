@@ -65,8 +65,7 @@ function Home() {
     }
 
     return (
-        <div className="posts">
-            <h2> List of Blog Posts </h2>
+        <div className="post">
             <ul>
                 {posts.map((post) => {
                     if (post.id === editingPostId) {
@@ -76,15 +75,13 @@ function Home() {
                             <div className="card" style={{ width: "45rem" }} key={post.id}>
                                 {<img className="card-img-top" src={post.image} alt={post.alt}></img>}
                                 <div className="card-body">
-                                    <p className="card-text">
+                                    <div className="card-text">
+                                        <p className="post-title"><strong>Title:</strong> {post.title} </p>
+                                        <p><strong>Content:</strong> {post.content} </p>
                                         <strong>Post ID:</strong> {post.id}
                                         <button type="button" className="delete-button" onClick={() => { onDelete(post) }}>Delete</button>
                                         <button type="button" className="edit-button" onClick={() => { onEdit(post) }}>Edit</button>
-                                        <br />
-                                        <strong>Title:</strong> {post.title} <br />
-                                        <strong>Content:</strong> {post.content} <br />
-                                        <br />
-                                    </p>
+                                   </div>
                                 </div>
                             </div>
                         );

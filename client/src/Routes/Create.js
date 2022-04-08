@@ -4,6 +4,9 @@ import Form from "../Components/Form";
 export default function Create() {
 
   return (
-    <Form />
+    <>
+      <h3>Write a New Post</h3>
+      <Form />
+    </>
   );
 }

@@ -1,8 +1,20 @@
 * {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Karla', sans-serif;
 }
 h2 {
   font-size: 3rem;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-left: 20px;
+}
+
+.post-title {
+  font-size: 1.5rem;
 }
 
 .navbar ul {
@@ -68,14 +80,16 @@ body {
   color: white;
 }
 
-.card {
+.card, .about-text {
   margin: 10px;
+  padding: 15px;
   border-radius: 20px;
   background: rgba(255,255,255,0.6);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-img-top {
-  margin: 20px auto;
+  margin: auto;
   display: block;
   width: 500px;
   border-radius: 10px;

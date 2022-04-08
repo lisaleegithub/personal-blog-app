@@ -23,9 +23,6 @@ function ContactForm() {
   return (
     <div class="container-fluid">
       <form onSubmit={onSubmit}>
-
-        <h4>Contact Us</h4>
-
         <div class="form-group">
           <label>Name*:</label>
           <input
