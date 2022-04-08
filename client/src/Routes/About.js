@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div>
-      <h3>About Us</h3>
+      <h3>About Me</h3>
       <p className="about-text">Do you like hiking? I LOVE hiking and I am fortunate to live in the beautiful Pacific Northwest because there are so many trails! 
         Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. 
         Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, 

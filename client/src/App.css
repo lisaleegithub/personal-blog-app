@@ -103,7 +103,7 @@ body {
   padding: 0px 15px;
   text-decoration: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 800;
   margin: 10px 15px 0px 15px;
   text-shadow: 2px 2px 3px #afc8e0;
@@ -114,3 +114,19 @@ body {
   color: rgba(0, 0, 0, 0.5);
   text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
 }
+
+.logo {
+  display: inline-block;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.nav-logo {
+  font-size: 2.7rem;
+  text-align: center;
+  font-family: 'Azeret Mono', monospace;
+  color: white;
+}
+
+
+
