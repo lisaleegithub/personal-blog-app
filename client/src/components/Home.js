@@ -73,8 +73,8 @@ function Home() {
                         return <Form initialPost={post} savePost={updatePost} />
                     } else {
                         return (
-                            <div className="card" key={post.id}>
-                                {<img className="card-img-top" src={post.image} alt={post.alt} width="600px"></img>}<br />
+                            <div className="card" style={{ width: "50rem" }} key={post.id}>
+                                {<img className="card-img-top" src={post.image} alt={post.alt} ></img>}<br />
                                 <div className="card-body">
                                     <p className="card-text">
                                         Post ID: {post.id}

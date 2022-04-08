@@ -128,7 +128,7 @@ const Form = (props) => {
                     />
                 </div>
 
-                <button type="submit" class="btn btn-success">{!post.id ? "Add" : "Save"}</button>
+                <button type="submit">{!post.id ? "Add" : "Save"}</button>
             </form>
         </div>
     );

@@ -43,7 +43,7 @@ function ContactForm() {
           <input
             type="email"
             required
-            placeholder="Email"
+            placeholder="name@example.com"
             value={values.email}
             onChange={set("email")}
             className="form-control"
@@ -73,7 +73,7 @@ function ContactForm() {
           </select>
         </div>
 
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
