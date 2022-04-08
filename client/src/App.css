@@ -76,11 +76,16 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.about-text {
+  width: 90%;
+  padding: 13px;
+}
+
 .card-img-top {
   margin: auto;
   display: block;
-  width: 500px;
-  border-radius: 10px;
+  width: 550px;
+  border-radius: 15px;
 }
 
 .navbar {
@@ -128,5 +133,19 @@ body {
   color: white;
 }
 
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 2px 2px 3px white;
+}
+
+form input {
+  margin-bottom: 10px;
+}
 
 

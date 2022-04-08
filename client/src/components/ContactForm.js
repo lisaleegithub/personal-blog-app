@@ -60,9 +60,9 @@ function ContactForm() {
         </div>
 
         <div class="form-group">
-          <label>About us*:</label>
+          <label>Hear from me*:</label>
           <select required className="form-control">
-            <option value="">Would you like to be notified of new blog posts?</option>
+            <option value="">Would you like to be notified of my new blog posts?</option>
             {PERMISSIONS.map((preference) => (
               <option key={preference}>{preference}</option>
             ))}
